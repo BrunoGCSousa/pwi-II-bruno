@@ -1,0 +1,22 @@
+body {
+    background-color: pink;
+    text-align: center;    
+    color: rgb(247, 29, 210);
+}
+
+h3 {
+    color: rgb(247, 29, 210);
+
+}
+
+img {
+    mix-blend-mode: darken;
+}
+
+.rosa {
+    color: #fff;
+    background-color: rgb(247, 29, 210);}
+.roxo {
+    background-color: rgb(149, 14, 161);
+    color: #fff;
+}
