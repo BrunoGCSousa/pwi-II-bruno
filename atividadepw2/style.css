@@ -1,0 +1,26 @@
+body {
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin: 50px 0;
+    background-image: url('https://s2.glbimg.com/ZeyJWqNBKQLwXiWuKjhss9PSx4w=/0x0:1612x1075/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/L/0/htou24Tvi5lGbrNi6ECw/ap5384918273451076.jpg');
+    background-position: 300px 150px;
+    background-repeat: no-repeat;
+}
+
+.vermelho {
+    background-color: red;
+    color: white;
+    background-image: none;
+}
+
+input[type=submit]{
+    background-color: pink;
+    padding: 10px 30px;
+}
+
+h1 {
+    margin: 0;
+}
