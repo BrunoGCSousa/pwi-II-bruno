@@ -11,16 +11,4 @@
 </head>
 <body>
 
-<header>
-    <nav>
-        <h1>BLL <br>
-        FILMES</h1>
 
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Cartaz</a></li>
-            <li><a href="#">Gêneros</a></li>
-            <li><a href="#">Fale conosco</a></li>
-        </ul>
-    </nav>
-</header>

@@ -50,6 +50,8 @@ CREATE TABLE IF NOT EXISTS `filmes` (
   `anoFilme` varchar(255) DEFAULT NULL,
   `diretor` varchar(255) DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
+  `linkTrailer` varchar(255) DEFAULT NULL,
+  `imagemFilme` varchar(255) DEFAULT NULL,
   `idGenero` int(11) DEFAULT NULL,
   PRIMARY KEY (`idFilme`),
   KEY `idGenero` (`idGenero`)
