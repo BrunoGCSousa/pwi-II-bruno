@@ -6,18 +6,6 @@ body {
     text-align: center;
 }
 
-.preto {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(0deg, rgb(0, 0, 0) 7%, rgba(0, 0, 0, 0.400) 30%, rgba(196, 196, 196, 0) 100%);
-    z-index: 99999999999999;
-
-}
-
 header {
     width: 100%;
     display: flex;
@@ -33,7 +21,6 @@ header nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.267);
     align-items: center;
 
 }
@@ -43,6 +30,12 @@ header nav ul {
     width: 50%;
     justify-content: space-between;
     list-style: none;
+    align-items: center;
+}
+
+
+.nav-pills .nav-link.active{
+background-color: rgb(215, 108, 248) ;
 }
 
 header nav ul li a {
@@ -53,19 +46,10 @@ header nav ul li a {
     transition: 1s;
 }
 
-header nav ul li a:hover {
-    text-decoration: none;
-    background-color: black;
-    color: #fff;
-}
+
 
 header nav img {
     width: 50%;
-}
-
-p {
-    color: white;
-    font-size: 50px;
 }
 
 .carousel-inner {
@@ -77,4 +61,142 @@ p {
     padding: 70px;
     border-radius: 20px;
     border: 1px solid;
+}
+
+
+.pets {
+    margin-top: 150px;
+    width: 100%;
+}
+
+.pets .h1 {
+    font-size: 4rem;
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+
+.lista-de-imagens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 50px;
+    width: 98%;
+}
+
+.lista-de-imagens.row {
+    margin: 0 auto;
+}
+
+.pet{
+    margin: 10px 10px;
+    border-radius: 50px;
+    width: 600px;
+    position: relative;
+    height: 500px;
+    display: flex;
+    border-radius: 50px;
+    background: #00000075;
+    background-size: cover;
+    background-position: center;
+    background-image: var(--imagem-fundo);
+    transition: 1s;
+}
+
+.pet:hover {
+    height: 800px;
+    transition: 1s;
+}
+
+.oculto {
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-evenly;
+}
+
+.oculto p {
+    width: 350px;
+    word-wrap: break-word;
+}
+
+.pet:hover .oculto {
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+    transition-delay: .3s; 
+}
+
+
+.pet:hover .preto {
+    background-color: rgba(0, 0, 0, 0.596);
+}
+
+.preto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 1s;
+}
+
+
+.pet img {
+    position: relative;
+    top: 30%;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+
+.pet .descricao {
+    position: relative;
+    padding: 50px 20px;
+    color: #fff;
+    text-align: left;
+    transition: 1s;
+}
+
+
+.descricao h2{
+    font-size: 2rem;
+}
+
+.descricao h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    
+}
+
+.descricao h4 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.descricao h4 a {
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: rgb(103, 68, 255);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 1s;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.descricao h4 a:hover {
+    background-color: rgb(51, 53, 185);
 }
