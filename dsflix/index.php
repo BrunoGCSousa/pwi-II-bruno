@@ -36,11 +36,11 @@ require 'config.php';
                 não to mentindo.
             </h3>
 
-            <button>Ver filmes</button>
+            <a href="filmes.php"><button>Ver filmes</button></a>
         </div>
     </div>
 
-    <h2 class="titulo-2">Veja os filmes em <b>cartaz</b></h2>
+    <h2 class="titulo-2" id="cartaz">Veja os filmes em <b>cartaz</b></h2>
 
     <section class="variable slider">
 
@@ -64,7 +64,7 @@ require 'config.php';
         ?>
     </section>
 
-    <h2 class="titulo-2">Escolha por <b>categoria</b></h2>
+    <h2 class="titulo-2" id="categoria">Escolha por <b>categoria</b></h2>
 
     <section class="variable slider">
         <?php
@@ -75,7 +75,9 @@ require 'config.php';
 
             echo "
                 <div class='categoria'>
+                    <a href='categoria.php?id=$row[0]&genero=$row[1]'>
                     <h3>$row[genero]</h3>
+                    </a>
                 </div>
                 ";
 

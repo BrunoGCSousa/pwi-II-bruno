@@ -300,3 +300,39 @@ footer h3 {
   text-align: center;
   opacity: .8;
 }
+
+/* pagina filmes */
+
+.filmes {
+  margin-top: 120px;
+}
+
+.filme {
+  height: 500px;
+  border-radius: 50px;
+  margin: 20px;
+  width: 500px;
+  text-align: center;
+  background-color: #8f8f8f;
+  overflow: scroll;
+  padding: 0;
+}
+
+.filme::-webkit-scrollbar {
+  display: none;
+}
+
+.filme img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.conteudo {
+  margin: 0 10px 10px 10px;
+}
+
+/* pagina categorias */
+
+.categoria a{
+  text-decoration: none;
+}

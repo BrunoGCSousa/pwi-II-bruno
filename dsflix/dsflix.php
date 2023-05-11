@@ -22,7 +22,7 @@ require 'config.php';
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">DS <span>FLIX</span></a>
+            <a class="navbar-brand" href="dsflix.php">DS <span>FLIX</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -53,7 +53,6 @@ require 'config.php';
         </div>
     </nav>
 
-
     <div class="hero-section">
         <div class="video-banner">
             <video src="./img/banner.mp4" autoplay loop muted></video>
@@ -67,11 +66,11 @@ require 'config.php';
                 não to mentindo.
             </h3>
 
-            <button>Ver filmes</button>
+            <a href="filmes.php"><button>Ver filmes</button></a>
         </div>
     </div>
 
-    <h2 class="titulo-2">Veja os filmes em <b>cartaz</b></h2>
+    <h2 class="titulo-2" id="cartaz">Veja os filmes em <b>cartaz</b></h2>
 
     <section class="variable slider">
 
@@ -83,9 +82,11 @@ require 'config.php';
 
             echo "
                 <div>
+                    <a href='filme.php?id=$row[0]'>
                     <img
                         src='$row[imagemFilme]'
                     />
+                    </a>
                 </div>
                     ";
 
@@ -93,34 +94,30 @@ require 'config.php';
         ?>
     </section>
 
-    <h2 class="titulo-2">Escolha por <b>categoria</b></h2>
+    <h2 class="titulo-2" id="categoria">Escolha por <b>categoria</b></h2>
 
     <section class="variable slider">
-        <div class="categoria">
-            <h3>Terror</h3>
-            😨
-        </div>
-        <div class="categoria">
-            <h3>Comédia</h3>
-            😂
-        </div>
-        <div class="categoria">
-            <h3>Romance</h3>
-            🥰
-        </div>
-        <div class="categoria">
-            <h3>Aventura</h3>
-            🤠
-        </div>
-        <div class="categoria">
-            <h3>Suspense</h3>
-            🧐
-        </div>
-        <div class="categoria">
-            <h3>Ficção cientifica</h3>
-            🤓
-        </div>
+        <?php
+        $stmt = $pdo->prepare("select * from genero");
+        $stmt->execute();
+
+        while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+
+            echo "
+                <div class='categoria'>
+                    <a href='categoria.php?id=$row[0]&genero=$row[1]'>
+                    <h3>$row[genero]</h3>
+                    </a>
+                </div>
+                ";
+
+        }
+        ?>
     </section>
+
+    <?php 
+        include('footer.php');
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
         integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"

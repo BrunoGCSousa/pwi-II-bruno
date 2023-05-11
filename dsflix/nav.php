@@ -9,10 +9,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CATEGORIAS</a>
+                        <a class="nav-link" href="index.php#categoria">CATEGORIAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">LANÇAMENTOS</a>
+                        <a class="nav-link" href="index.php#cartaz">LANÇAMENTOS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="filmes.php">FILMES</a>

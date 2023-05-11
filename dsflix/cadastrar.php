@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">DS <span>FLIX</span></a>
+            <a class="navbar-brand" href="dsflix.php">DS <span>FLIX</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
             </div>
             <div class="form-floating mb-3">
                 <textarea class="form-control" placeholder="Escreva a sinopse do filme" id="descricao"
-                    style="height: 100px" name="sinopse"></textarea>
+                    style="height: 100px" name="sinopse" maxlength="255"></textarea>
                 <label for="descricao">Sinopse do filme</label>
             </div>
             <div class="mb-3">

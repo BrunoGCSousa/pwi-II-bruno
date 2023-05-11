@@ -19,37 +19,34 @@
 
 <?php include('nav.php')?>
 
-<div class="container filmes">
-    <h2 class="titulo-2">Ver todos os filmes</h2>
+<div class="filmes">
 
-    <div class="row">
-        <?php
-        $stmt = $pdo->prepare("select * from filme");
-        $stmt->execute();
+    <?php 
+    
+    $id = $_GET['id'];
+    $genero = $_GET['genero'];
 
-        while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+    
+    echo "<h2 class='titulo-2'>Ver todos os filmes de $genero</h2>";
 
-            echo "
-                <div class='col filme'>
-                    <a href='filme.php?id=$row[0]'>
-                    <img
-                        src='$row[imagemFilme]'
-                    />
-                    </a>
-                    <div class='conteudo'>
-                    <h3> $row[genero] </h3>
-                    <h1> $row[filme] </h1>
-                    <p> $row[sinopse] </p>
-                    </div>
-                </div>
-                    ";
+    $stmt = $pdo->prepare("SELECT * FROM `filme` WHERE genero = :genero;");
+    $stmt->bindParam(':genero', $genero);
+    $stmt->execute();
 
-        }
-        ?>
+    while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+
+        echo "<h3> $row[genero] </h3>";
+        echo "<h1> $row[filme] </h1>";
+        echo "<p> $row[sinopse] </p>";
+
+    }
+
+    
+    ?>
     </div>
 </div>
 
-
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
