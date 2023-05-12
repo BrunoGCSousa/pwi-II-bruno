@@ -141,6 +141,7 @@ a .icon{
   margin-bottom: 3rem;
   text-align: left;
   margin-left: 4vw;
+  align-self: flex-start;
 }
 
 .titulo-2::after {
@@ -305,17 +306,26 @@ footer h3 {
 
 .filmes {
   margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filme {
   height: 500px;
   border-radius: 50px;
   margin: 20px;
-  width: 500px;
+  width: 350px;
   text-align: center;
-  background-color: #8f8f8f;
+  background-color: #6d6d6d50;
   overflow: scroll;
   padding: 0;
+}
+
+.filme h1 {
+  font-weight: 800;
+  text-shadow: 5px 5px 5px black;
 }
 
 .filme::-webkit-scrollbar {
@@ -330,9 +340,19 @@ footer h3 {
 .conteudo {
   margin: 0 10px 10px 10px;
 }
+.filmes .row {
+  justify-content: center;
+}
 
 /* pagina categorias */
 
 .categoria a{
   text-decoration: none;
+}
+
+.categorias {
+  margin: 120px 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -19,8 +19,7 @@
 
 <?php include('nav.php')?>
 
-<div class="filmes">
-
+<div class="row categorias">
     <?php 
     
     $id = $_GET['id'];
@@ -29,24 +28,33 @@
     
     echo "<h2 class='titulo-2'>Ver todos os filmes de $genero</h2>";
 
+    ?>
+
+
+        
+        <?php
+
     $stmt = $pdo->prepare("SELECT * FROM `filme` WHERE genero = :genero;");
     $stmt->bindParam(':genero', $genero);
     $stmt->execute();
-
+    
     while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
-
-        echo "<h3> $row[genero] </h3>";
-        echo "<h1> $row[filme] </h1>";
-        echo "<p> $row[sinopse] </p>";
-
+        
+        echo "<div class='col filme'> 
+        <h1> $row[filme] </h1>
+        <a href='filme.php?id=$row[0]'>
+        <img
+        src='$row[imagemFilme]'
+        />
+        </a>";
+        echo "<p> $row[sinopse] </p>
+        </div> ";
+        
     }
-
+    
     
     ?>
     </div>
-</div>
-
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"

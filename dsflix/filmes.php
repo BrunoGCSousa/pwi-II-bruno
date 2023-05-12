@@ -30,7 +30,7 @@
         while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
 
             echo "
-                <div class='col filme'>
+                <div class='col-lg-2 filme'>
                     <a href='filme.php?id=$row[0]'>
                     <img
                         src='$row[imagemFilme]'

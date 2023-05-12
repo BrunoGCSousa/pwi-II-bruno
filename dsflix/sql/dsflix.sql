@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 07-Maio-2023 às 17:51
+-- Tempo de geração: 12-Maio-2023 às 16:49
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `filme` (
   `imagemFilme` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idFilme`),
   KEY `fk_filme_genero` (`idGenero`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `filme`
@@ -47,7 +47,8 @@ INSERT INTO `filme` (`idFilme`, `filme`, `idGenero`, `genero`, `sinopse`, `image
 (3, 'Mario', NULL, 'Aventura', 'Its me Mariooooo', 'img/super-mario-bros__1.jpg'),
 (5, 'Carie a estranha', NULL, 'Terror', 'é ela carie a estranha', 'img/Carrie-a-Estranha-Carrie-filme-de-terror.jpg'),
 (6, 'O nascimento do Mal', NULL, 'Terror ', 'Depois de anos lutando para começar uma família, Julie Rivers (Melissa Barrera) está grávida novamente e se mudando para uma nova casa com o marido enquanto eles abraçam um novo começo. Ao receber a ordem de repouso obrigatório na cama, Julie começa a se ', 'img/2997379.webp'),
-(7, 'Dançando no silêcio', NULL, 'Drama', 'Uma jovem apaixonada por balé passa por um trauma, conhece outras mulheres que passaram por situações semelhantes e encontraram uma forma criativa de perseguir sua paixão. Classificação indicativa 14 anos, contém violência, drogas lícitas e temas sensívei', 'img/5555918.jpg');
+(7, 'Dançando no silêcio', NULL, 'Drama', 'Uma jovem apaixonada por balé passa por um trauma, conhece outras mulheres que passaram por situações semelhantes e encontraram uma forma criativa de perseguir sua paixão. Classificação indicativa 14 anos, contém violência, drogas lícitas e temas sensívei', 'img/5555918.jpg'),
+(8, 'Your name', NULL, 'Drama', 'Filme de anime fofinho bonitinho pra chorar muito e tals', 'img/4966397.webp');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `genero` (
   `idGenero` int NOT NULL AUTO_INCREMENT,
   `genero` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`idGenero`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `genero`
@@ -72,7 +73,8 @@ INSERT INTO `genero` (`idGenero`, `genero`) VALUES
 (4, 'Aventura'),
 (7, 'Romance'),
 (8, 'Suspense'),
-(9, 'Ficção Cientifica');
+(9, 'Ficção Cientifica'),
+(10, 'Drama');
 
 -- --------------------------------------------------------
 
