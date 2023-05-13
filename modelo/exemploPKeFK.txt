@@ -9,3 +9,6 @@ create table tbFilme(
 	idGenero int,
 	foreign key (idGenero) references tbGenero(idGenero)
 );
+
+insert into tbgenero values (null,'Comédia'),(null,'Ação');
+insert into tbfilme values (null,'Guardiões das galáxia',2);

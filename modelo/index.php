@@ -1,3 +1,5 @@
+<?php include("conexao.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +18,45 @@
         <ul>
     </nav>
 
-    <h1>
-        Início
-    </h1>
+    <section>
+        <h1>
+            Início
+        </h1>
+    </section>
+
+    <section>
+    <?php
+        $stmt = $pdo->prepare("SELECT   f.idFilme,
+                                        f.filme,
+                                        f.idGenero, 
+                                        g.genero
+                                        FROM tbfilme f
+        inner join tbGenero g
+        on f.idGenero = g.idGenero limit 3");	
+        $stmt ->execute();
+        
+        while($row = $stmt ->fetch(PDO::FETCH_BOTH)){            
+            
+        ?>    
+            <figure style="float:left;">
+                <img src="" />
+                <figcaption>        
+                    <h1> <?php echo $row[1] ?> </h1>   
+                    <h2> Duração </h2>   
+                    <h3> Descrição </h3>   
+                    <p> <?php echo $row[3] ?> </p>   
+                </figcaption>
+            </figure>
+
+        <?php }	?>
+       
+    </section>
+
+    <section>
+
+    </section>
+
+
     
 </body>
 </html>

@@ -13,10 +13,6 @@ header {
 }
 
 header nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999999;
     color: white;
     width: 100%;
     display: flex;
@@ -57,7 +53,7 @@ header nav img {
 }
 
 .formulario {
-    margin-top: 130px;
+    margin: 130px auto;
     padding: 70px;
     border-radius: 20px;
     border: 1px solid;
@@ -199,4 +195,16 @@ header nav img {
 
 .descricao h4 a:hover {
     background-color: rgb(51, 53, 185);
+}
+
+.PG{
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: rgb(103, 68, 255);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 1s;
+    font-weight: 800;
+    letter-spacing: 1px;
 }

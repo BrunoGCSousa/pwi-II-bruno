@@ -2,29 +2,6 @@
 
 
 
-<header>
-    <nav>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li>
-                <img src="./images/bllbranco.png" alt="">
-            </li> 
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="index.php">Inicio</a></button>
-            </li> 
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="cartaz.php">Cartaz</a></button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="genero.php">Genero</a></button>
-            </li> 
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="cadastrarFilme.php">Cadastrar</a></button>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -63,4 +40,4 @@
 <p>Basicamente, se você precisa procurar algum filme, ver sua sinopse ou coisas do tipo, o BLL Filmes é o seu site, aqui
     vamos dar dicas e descrições para facilitar sua noite de maratonas.
 </p>
-< <?php include("rodape.php"); ?>
+ <?php include("rodape.php"); ?>

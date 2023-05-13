@@ -11,7 +11,12 @@ $imagemFilme = $_POST['imagemFilme'];
     
 
 $stmt = $pdo->prepare("insert into filmes 
-values(null,'$nome','$ano','$diretor','$sinopse', '$linkTrailer', '$imagemFilme', null, '$genero')");	    
+values(null,'$nome','$ano','$diretor','$sinopse', '$linkTrailer', '$imagemFilme', '$genero')");	    
+$stmt ->execute();
+
+
+$stmt = $pdo->prepare("insert into genero
+values(null, '$genero')");	    
 $stmt ->execute();
 
 header("location:cartaz.php");   
