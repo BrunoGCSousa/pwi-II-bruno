@@ -284,6 +284,28 @@ h3 {
   max-width: 100px;
 }
 
+.cadastrar-filme {
+  margin-top: 150px;
+  width: 500px;
+}
+
+td a {
+  color: #fff;
+  font-size: 2rem;
+  transition: 1s;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+td a:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
 /* Rodapé */
 
 footer {

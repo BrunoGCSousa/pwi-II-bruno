@@ -50,39 +50,69 @@ require 'config.php';
         </div>
     </nav>
 
+    <div class="container cadastrar-filme">
+
+        <h2 class="mb-3">Editar um filme</h2>
+        <form action="editarFilme.php" method="POST" enctype="multipart/form-data">
+            <div>
+                <input type="hidden" name="idFilme" value="<?php echo @$_GET['idFilme']; ?>" />
+            </div>
+            <div class="mb-3">
+                <label for="filme">Filme</label>
+                <input type="text" class="form-control" id="filme" name="filme" value="<?php echo @$_GET['filme']; ?>"/>
+            </div>
+            <div class="mb-3">
+                <label for="genero">Gênero</label>
+                <input type="text" class="form-control" id="genero" name="genero" value="<?php echo @$_GET['genero']; ?>"/>
+            </div>
+            <div class="mb-3">
+                <label for="descricao">Sinopse do filme</label>
+                <textarea class="form-control" id="descricao"
+                    style="height: 100px" name="sinopse" maxlength="255"><?php echo @$_GET['sinopse']; ?></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="genero">Imagem Filme</label>
+                <input type="text" class="form-control" name="imagemFilme" value="<?php echo @$_GET['imagemFilme']; ?>"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+    </div>
+
 
     <div class="container lista-filmes">
         <table class="table">
             <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nome</th>
-                <th scope="col">idGenero</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Sinopse</th>			
-                <th scope="col">imagemFilme</th>
-                <th scope="col">Ações</th>
-            </tr>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">idGenero</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Sinopse</th>
+                    <th scope="col">imagemFilme</th>
+                    <th scope="col">Ações</th>
+                </tr>
             </thead>
             <tbody>
-            <?php
-                $stmt = $pdo->prepare("select * from filme");	
-                $stmt ->execute();
-                
-                while($row = $stmt ->fetch(PDO::FETCH_BOTH)){
-                  echo "<tr class='celula'>";
-                    echo "<td> $row[0] </td>";						
-                    echo "<td> $row[1] </td>";						
-                    echo "<td> $row[2] </td>";						
-                    echo "<td> $row[3] </td>";											
+                <?php
+                $stmt = $pdo->prepare("select * from filme");
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+                    echo "<tr class='celula'>";
+                    echo "<td> $row[0] </td>";
+                    echo "<td> $row[1] </td>";
+                    echo "<td> $row[2] </td>";
+                    echo "<td> $row[3] </td>";
                     echo "<td> $row[4] </td>";
                     echo "<td> <img src='$row[5]'> </td>";
                     echo "<td> 
-                            <a href='removerFilme.php?id=$row[0]'> Remover </a>
+                            <a href='removerFilme.php?id=$row[0]'><ion-icon name='trash-outline'></ion-icon></a>
+                            <a href='?idFilme=$row[0]&filme=$row[1]&genero=$row[3]&sinopse=$row[4]&descricao=$row[5]&imagemFilme=$row[5]'><ion-icon name='create-outline'></ion-icon></a>
                           </td>";
-                  echo "</tr>";
-                }	
-            ?>
+                    echo "</tr>";
+                }
+                ?>
             </tbody>
         </table>
     </div>
