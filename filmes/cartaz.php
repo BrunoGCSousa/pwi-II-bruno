@@ -13,7 +13,7 @@
                         while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
 
                             echo "
-                                    <div class='pet col-xl-3 col-md-5' style='--imagem-fundo: url(" . "$row[imagemFilme]');'>
+                                    <div class='pet col-xl-3 col-md-5' style='--imagem-fundo: url(" . "../images/" . "$row[imagemFilme]" . ");'>
                                     <div class='preto'></div>
                                     <div class='descricao'>
                                         <h2>$row[nomeFilme] </h2>
