@@ -62,7 +62,7 @@
                         <label for="tipoConta">Tipo de conta</label>
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="senha" placeholder="senha" name="senha">
+                        <input type="password" class="form-control" id="senha" placeholder="senha" name="senha">
                         <label for="senha">Senha</label>
                     </div>
 
