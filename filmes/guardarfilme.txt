@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="guardar-imagem.php" enctype="multipart/form-data" method="post">
+        <input type="file" name="arqimage" class="form-control-file">
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
+
+
+Caso queira salvar no proprio arquivo 
+linha de extrema importancia para salvar o arquivo no próprio projeto:
+enctype="multipart/form-data"
+
+ AQUI 
+ guarda o filme no arquivo
+
+<?php
+
+//imagem do marcador 
+// isset serve para verificar se aquela variavel foi definida ou não
+
+if (isset($_FILES["arqimage"])) {
+    $arqINome = $_FILES["arqimage"]["name"];
+    $arqITipo = $_FILES["arqimage"]["type"];
+    $arqITamanho = $_FILES["arqimage"]["size"];
+    $arqINomeTemp = $_FILES["arqimage"]["tmp_name"];
+    $erroImgMarc = $_FILES["arqimage"]["error"];
+
+    if ($erroImgMarc == 0) {
+        if (is_uploaded_file($arqINomeTemp)) {
+            if (move_uploaded_file($arqINomeTemp, "image/" . $arqINome)) {
+                $caminhoI = $arqINome;
+            } else {
+                $erro = "Falha ao mover imagem do marcador";
+                echo $erro;
+            }
+        }
+    } else {
+        $erro = "Erro no envio: A imagem do marcador não foi recebida com sucesso";
+        echo $erro;
+    }
+
+
+}
+
+?>

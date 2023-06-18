@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 13-Maio-2023 às 01:27
+-- Tempo de geração: 27-Maio-2023 às 01:17
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -55,18 +55,15 @@ CREATE TABLE IF NOT EXISTS `filmes` (
   `idGenero` varchar(255) NOT NULL,
   PRIMARY KEY (`idFilme`),
   KEY `idGenero` (`idGenero`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `filmes`
 --
 
 INSERT INTO `filmes` (`idFilme`, `nomeFilme`, `anoFilme`, `diretor`, `descricao`, `linkTrailer`, `imagemFilme`, `idGenero`) VALUES
-(2, 'O nascimento do Mal', '2023', 'Lori Evans Taylor', 'Depois de anos lutando para comeÃ§ar uma famÃ­lia, Julie Rivers (Melissa Barrera) estÃ¡ grÃ¡vida novamente e se mudando para uma nova casa com o marido enquanto eles abraÃ§am um novo comeÃ§o. Ao receber a ordem de repouso obrigatÃ³rio na cama, Julie comeÃ§a a se desfazer lentamente enquanto sofre com a monotonia e a ansiedade de suas novas restriÃ§Ãµes. Logo, terrÃ­veis experiÃªncias fantasmagÃ³ricas em casa comeÃ§am a se aproximar de Julie, despertando seus demÃ´nios do passado e fazendo com que outras pessoas questionem sua estabilidade mental. Presa e forÃ§ada a enfrentar seu passado e o sobrenatural, Julie luta para proteger a si mesma e a seu bebÃª ainda nÃ£o nascido.', 'https://www.youtube.com/embed/Mho4ojb2APU', 'https://br.web.img2.acsta.net/pictures/23/03/01/17/28/2997379.jpg', 'Terror'),
-(3, 'DanÃ§ando no silÃªcio', '2023', 'Mounia Meddour', 'Uma jovem apaixonada por balÃ© passa por um trauma, conhece outras mulheres que passaram por situaÃ§Ãµes semelhantes e encontraram uma forma criativa de perseguir sua paixÃ£o. ClassificaÃ§Ã£o indicativa 14 anos, contÃ©m violÃªncia, drogas lÃ­citas e temas sensÃ­veis.', 'https://www.youtube.com/embed/MgJBSR-q5Og', 'https://www.reservacultural.com.br/wp-content/uploads/2023/05/5555918.jpg', 'Drama'),
-(4, 'O InÃ­cio do Fim', '2023', 'Kevin Sorbo', 'Seis meses atrÃ¡s, milhÃµes de pessoas desapareceram sem deixar vestÃ­gios e o caos tomou conta do mundo. Muitos acreditam que o governo estÃ¡ por trÃ¡s de tudo, outros defendem que a BÃ­blia jÃ¡ havia previsto os desaparecimentos hÃ¡ milhares de anos. Desesperado por respostas em um mundo cheio de medo e mentiras, o jornalista Buck Williams (Greg Perrow) decide ir atÃ© o fim em busca da verdade e de salvaÃ§Ã£o.', 'https://www.youtube.com/embed/MgJBSR-q5Og', 'https://br.web.img3.acsta.net/pictures/23/03/08/19/38/3073741.jpg', 'Suspense'),
-(5, 'Os Cavaleiros do ZodÃ­aco - Saint Seiya: O ComeÃ§o', '2023', 'Tomasz Baginski', 'Produzido pela Toei Animation e baseado na sensaÃ§Ã£o internacional do anime, Cavaleiros do ZodÃ­aco traz a saga de Saint Seiya para a tela grande em live-action pela primeira vez. Seiya (Mackenyu), um obstinado adolescente de rua, passa seu tempo lutando por dinheiro enquanto procura por sua irmÃ£ sequestrada. Quando uma de suas lutas inadvertidamente explora poderes mÃ­sticos que ele nunca soube que tinha, Seiya se vÃª lanÃ§ado em um mundo de santos guerreiros, treinamento mÃ¡gico antigo e uma deusa reencarnada que precisa de sua proteÃ§Ã£o. Se ele quiser sobreviver, precisarÃ¡ abraÃ§ar seu destino e sacrificar tudo para ocupar seu lugar de direito entre os Cavaleiros do ZodÃ­aco.', 'https://www.youtube.com/embed/sARBJA7IUY0', 'https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/11401/filme_11401.jpg', 'AÃ§Ã£o'),
-(8, 'Titanic', '2020', 'Zack Synder', 'Titanic Ã© um filme assiam e assim e assado e pipipopop', 'https://www.youtube.com/watch?v=F2RnxZnubCM', 'https://s2.glbimg.com/w64gbMs4_rnGk3oO1sWF3Zv6ZcU=/512x320/smart/e.glbimg.com/og/ed/f/original/2018/10/24/titanic_s.jpg', 'Drama');
+(15, 'Os Cavaleiros do ZodÃ­aco - Saint Seiya: O ComeÃ§o', '2023', 'Tomasz Baginski', 'Produzido pela Toei Animation e baseado na sensaÃ§Ã£o internacional do anime, Cavaleiros do ZodÃ­aco traz a saga de Saint Seiya para a tela grande em live-action pela primeira vez. Seiya (Mackenyu), um obstinado adolescente de rua, passa seu tempo lutando por dinheiro enquanto procura por sua irmÃ£ sequestrada. Quando uma de suas lutas inadvertidamente explora poderes mÃ­sticos que ele nunca soube que tinha, Seiya se vÃª lanÃ§ado em um mundo de santos guerreiros, treinamento mÃ¡gico antigo e uma deusa reencarnada que precisa de sua proteÃ§Ã£o. Se ele quiser sobreviver, precisarÃ¡ abraÃ§ar seu destino e sacrificar tudo para ocupar seu lugar de direito entre os Cavaleiros do ZodÃ­aco.', 'https://www.youtube.com/embed/sARBJA7IUY0', 'Cavaleiros.jpg', 'Aï¿½ï¿½o'),
+(14, 'O nascimento do Mal', '2023', 'Lori Evans Taylor', 'Depois de anos lutando para comeÃ§ar uma famÃ­lia, Julie Rivers (Melissa Barrera) estÃ¡ grÃ¡vida novamente e se mudando para uma nova casa com o marido enquanto eles abraÃ§am um novo comeÃ§o. Ao receber a ordem de repouso obrigatÃ³rio na cama, Julie comeÃ§a a se desfazer lentamente enquanto sofre com a monotonia e a ansiedade de suas novas restriÃ§Ãµes. Logo, terrÃ­veis experiÃªncias fantasmagÃ³ricas em casa comeÃ§am a se aproximar de Julie, despertando seus demÃ´nios do passado e fazendo com que outras pessoas questionem sua estabilidade mental. Presa e forÃ§ada a enfrentar seu passado e o sobrenatural, Julie luta para proteger a si mesma e a seu bebÃª ainda nÃ£o nascido.\r\n', 'https://www.youtube.com/embed/Mho4ojb2APU', 'mal.jpg', 'Terror');
 
 -- --------------------------------------------------------
 
@@ -79,16 +76,19 @@ CREATE TABLE IF NOT EXISTS `genero` (
   `idGenero` int(11) NOT NULL AUTO_INCREMENT,
   `genero` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idGenero`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `genero`
 --
 
 INSERT INTO `genero` (`idGenero`, `genero`) VALUES
-(4, 'Drama'),
-(2, 'Terror'),
-(3, 'Drama');
+(16, 'Comédia'),
+(12, 'Terror'),
+(15, 'Ação'),
+(14, 'Romance'),
+(13, 'Drama'),
+(17, 'Aventura');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
