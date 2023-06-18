@@ -1,0 +1,24 @@
+create database dsflix;
+
+create table usuario (
+    idUsuario int PRIMARY KEY AUTO_INCREMENT,
+    usuario varchar(100),
+    email varchar(100),
+    tipoConta varchar(100),
+    senha varchar(100)
+);
+
+create table filme (
+    idFilme int PRIMARY KEY AUTO_INCREMENT,
+    filme varchar(100),
+    idGenero int,
+    genero varchar(100),
+    sinopse varchar(400),
+    imagemFilme varchar(400)
+);
+
+create table genero (
+    idGenero int PRIMARY KEY AUTO_INCREMENT,
+    genero varchar(100)
+);
+

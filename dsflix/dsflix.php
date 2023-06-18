@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -39,14 +40,9 @@ require 'config.php';
                 </ul>
                 <div class="text-align-center">
                     <?php
-                    $stmt = $pdo->prepare("select * from usuario");
-                    $stmt->execute();
-
-                    $row = $stmt->fetch(PDO::FETCH_BOTH);
-
-                    echo "<span> Bem vindo $row[usuario], </span>";
+                    echo "<span> Bem vindo $_SESSION[nome], </span>";
                     ?>
-                    <a href="#">sair?</a>
+                    <a href="deslogar.php">sair?</a>
                 </div>
             </div>
 

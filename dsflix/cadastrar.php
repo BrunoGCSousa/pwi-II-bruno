@@ -15,7 +15,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="dsflix.php">DS <span>FLIX</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -34,12 +34,7 @@
                 </ul>
                 <div>
                     <?php
-                    $stmt = $pdo->prepare("select * from usuario");
-                    $stmt->execute();
-
-                    $row = $stmt->fetch(PDO::FETCH_BOTH);
-
-                    echo "<span> Bem vindo $row[usuario],</span>";
+                    echo "<span> Bem vindo $_SESSION[nome], </span>";
                     ?>
                     <a href="index.php">sair?</a>
                 </div>
@@ -56,9 +51,22 @@
                 <input type="text" class="form-control" id="filme" placeholder="Avatar" name="filme" />
                 <label for="filme">Filme</label>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="genero" placeholder="Gênero" name="genero" />
-                <label for="genero">Gênero</label>
+            <div class="mb-3">
+                <select class="form-select" require name="genero">
+                    <option selected disabled>Selecione um genero</option>
+                <?php
+                $stmt = $pdo->prepare("select * from genero");
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+
+                    echo "
+                    <option value='$row[1]'>$row[1]</option>
+                ";
+
+                }
+                ?>
+                </select>
             </div>
             <div class="form-floating mb-3">
                 <textarea class="form-control" placeholder="Escreva a sinopse do filme" id="descricao"

@@ -40,7 +40,7 @@
     
     while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
         
-        echo "<div class='col filme'> 
+        echo "<div class='col-6 filme'> 
         <h1> $row[filme] </h1>
         <a href='filme.php?id=$row[0]'>
         <img

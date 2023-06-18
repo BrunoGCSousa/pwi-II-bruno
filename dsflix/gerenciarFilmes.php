@@ -36,12 +36,7 @@ require 'config.php';
                 </ul>
                 <div class="text-align-center">
                     <?php
-                    $stmt = $pdo->prepare("select * from usuario");
-                    $stmt->execute();
-
-                    $row = $stmt->fetch(PDO::FETCH_BOTH);
-
-                    echo "Bem vindo $row[usuario],";
+                    echo "<span> Bem vindo $_SESSION[nome], </span>";
                     ?>
                     <a href="index.php">sair?</a>
                 </div>
@@ -59,20 +54,36 @@ require 'config.php';
             </div>
             <div class="mb-3">
                 <label for="filme">Filme</label>
-                <input type="text" class="form-control" id="filme" name="filme" value="<?php echo @$_GET['filme']; ?>"/>
+                <input type="text" class="form-control" id="filme" name="filme"
+                value="<?php echo @$_GET['filme']; ?>" />
             </div>
             <div class="mb-3">
-                <label for="genero">Gênero</label>
-                <input type="text" class="form-control" id="genero" name="genero" value="<?php echo @$_GET['genero']; ?>"/>
+                <label for="genero">Genero</label>
+                <select class="form-select" require name="genero">
+                    <option selected disabled><?php echo @$_GET['genero'] ?></option>
+                <?php
+                $stmt = $pdo->prepare("select * from genero");
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+
+                    echo "
+                    <option value='$row[1]'>$row[1]</option>
+                ";
+
+                }
+                ?>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="descricao">Sinopse do filme</label>
-                <textarea class="form-control" id="descricao"
-                    style="height: 100px" name="sinopse" maxlength="255"><?php echo @$_GET['sinopse']; ?></textarea>
+                <textarea class="form-control" id="descricao" style="height: 100px" name="sinopse"
+                    maxlength="255"><?php echo @$_GET['sinopse']; ?></textarea>
             </div>
             <div class="mb-3">
                 <label for="genero">Imagem Filme</label>
-                <input type="text" class="form-control" name="imagemFilme" value="<?php echo @$_GET['imagemFilme']; ?>"/>
+                <input type="text" class="form-control" name="imagemFilme"
+                    value="<?php echo @$_GET['imagemFilme']; ?>" />
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
@@ -95,7 +106,7 @@ require 'config.php';
             </thead>
             <tbody>
                 <?php
-                $stmt = $pdo->prepare("select * from filme");
+                $stmt = $pdo->prepare("select * from filme ORDER BY idFilme ASC");
                 $stmt->execute();
 
                 while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {

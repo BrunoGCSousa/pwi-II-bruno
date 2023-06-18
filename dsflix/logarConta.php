@@ -11,6 +11,7 @@
 
     if ($stmt->rowCount() > 0) {
         header("location:dsflix.php");
+        $_SESSION['nome'] = $row[1];
     } else {
         echo "Usuario não encontrado";
     }

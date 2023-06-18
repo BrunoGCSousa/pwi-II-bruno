@@ -1,20 +1,25 @@
 <?php  
     include("config.php");
 
+    
     $nomeUsuario = $_POST['usuario'];
     $email = $_POST['email'];
     $tipoConta = $_POST['tipoConta'];
     $senha = $_POST['senha'];
-    $duplicado = $email == $email;
-    
+    $stmt = $pdo->prepare("select * from usuario where email = '$email'");	    
+    $stmt ->execute();
 
-    if ($duplicado) {
+    $temEmail = $stmt -> fetch(PDO::FETCH_BOTH);
+    
+    if(!empty($temEmail)){
         echo "<script> window.alert('Este email já está em uso') </script>";
-    }else {
+    } else {
         $stmt = $pdo->prepare("insert into usuario values(null,'$nomeUsuario','$email','$tipoConta','$senha')");	    
         $stmt ->execute();    
-        header("location:index.php"); 
+        echo "<script> window.alert('Registrado com sucesso') </script>";
+        header("location: dsflix.php");
+        $_SESSION['nome'] = $nomeUsuario;
     }
 
-    
+
 ?>
