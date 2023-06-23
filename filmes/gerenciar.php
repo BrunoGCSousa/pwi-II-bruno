@@ -8,13 +8,13 @@
         </div>		
         <div class="mb-3 col-12">
             <label for="nomeFilme" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Ex: Titanic" name="nome"  value="<?php echo @$_GET['nomeFilme']; ?>">
+            <input type="text" class="form-control" id="nome" placeholder="Ex: Titanic" name="nomeFilme"  value="<?php echo @$_GET['nomeFilme']; ?>">
         </div>
     </div>
     <div class="row">
         <div class="mb-3 col-12">
-            <label for="sinopse" class="form-label">Sinopse</label>
-            <textarea name="sinopse" id="sinopse" cols="30" rows="10" class="form-control" name="descricao"><?php echo @$_GET['descricao']; ?></textarea>
+            <label for="descricao" class="form-label">Sinopse</label>
+            <textarea id="descricao" cols="30" rows="10" class="form-control" name="descricao"><?php echo @$_GET['descricao']; ?></textarea>
         </div>
     </div>
     <div class="row">

@@ -1,7 +1,7 @@
 <?php
 
     $id = $_POST['idFilme'];
-    $nome = $_POST['nomeFilme'];
+    $nomeFilme = $_POST['nomeFilme'];
     $descricao = $_POST['descricao'];
     $ano = $_POST['ano'];
     $diretor = $_POST['diretor'];
@@ -10,18 +10,17 @@
     $imagemFilme = $_POST['imagemFilme'];
 
 
-    //echo $id;
-
     include("conexao.php");
 
     $stmt = $pdo->prepare(
         "update filmes set
-        nomeFilme = '$nome',
+        nomeFilme = '$nomeFilme',
         anoFilme = '$ano',
         diretor = '$diretor',
         descricao = '$descricao',
         linkTrailer = '$linkTrailer',
-        linkImagem = '$imagemFilme',
+        imagemFilme = '$imagemFilme',
+        idGenero = '$genero'
         where idFilme = '$id';
         "
         

@@ -29,7 +29,7 @@
         </div>
         <div class="mb-3 col-4">
             <label for="genero" class="form-label">Gênero</label>
-            <select name="genero" id="">
+            <select name="genero" id="" class="form-control">
                 <?php
 
                 $stmt = $pdo->prepare("select * from genero");
@@ -57,7 +57,7 @@
         </div>
         <div class="mb-3 col-6">
             <label for="imgFilme" class="form-label">Imagem filme</label>
-            <input type="file" id="imagemFilme" name="imagemFilme" required>
+            <input type="file" id="imagemFilme" name="imagemFilme" required class="form-control-file">
         </div>
     </div>
     <div class="col-auto">
